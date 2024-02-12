@@ -1,10 +1,8 @@
-import AddUser from './assignments/assignment-7/AddUser'
-
-
+import RegistrationForm from "./assignments/assignment-6/regform/RegistrationForm"
 function App() {
   return (
     <div>
-        <AddUser/>
+        <RegistrationForm/>
     </div>
   )
 }

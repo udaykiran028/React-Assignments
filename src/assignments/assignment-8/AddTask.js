@@ -13,7 +13,7 @@ function AddTask() {
   return (
     <div>
       <p className="lead fs-1 text-center bg-dark text-info">Add Task</p>
-      <form className='shadow-lg' onSubmit={handleSubmit(handleTaskSubmit)}>
+      <form  onSubmit={handleSubmit(handleTaskSubmit)}>
          <div>
             <input type="text" id="task" className="form-control mb-4" placeholder='Enter the task' {...register("newTask")}/>
             <button type="submit" className="btn btn-success d-block mx-auto">Add</button>

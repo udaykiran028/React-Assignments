@@ -8,7 +8,7 @@ function TasksCount() {
     <div>
       <p className="lead fs-1 text-center bg-dark text-info">Tasks Count</p>
       {
-        <p className="lead">No of tasks <span className="text-success">{tasks.length}</span></p>
+        <h5>No of tasks <span className="text-success">{tasks.length}</span></h5>
       }
     </div>
   )
