@@ -1,8 +1,8 @@
-import RegistrationForm from "./assignments/assignment-6/regform/RegistrationForm"
+import Router from './assignments/assignment-11/Router'
 function App() {
   return (
     <div>
-        <RegistrationForm/>
+        <Router/>
     </div>
   )
 }

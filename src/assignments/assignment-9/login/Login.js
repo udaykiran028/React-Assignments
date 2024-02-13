@@ -1,53 +1,32 @@
 import React from 'react'
-import {useForm} from 'react-hook-form'
-import {Link,useNavigate} from 'react-router-dom'
-import {compareSync} from 'bcryptjs'
+import {Link} from 'react-router-dom'
 
 function Login() {
-  let {register,handleSubmit} = useForm()
-  let navigate = useNavigate()
 
-  function onLoginFormSubmit(userCredentialsObject){
-    fetch(`http://localhost:4000/users?username=${userCredentialsObject.username}`,{method:"GET"}
-    )
-    .then((res)=>res.json())
-    .then((userObjArray)=>{
-      if(userObjArray.length===0){
-        alert("Invalid username")
-      }else{
-        let result = compareSync(userCredentialsObject.password,userObjArray[0].password)
-
-        if(result === true){
-          navigate(`/user-dashboard/${userCredentialsObject.username}`,{state:userObjArray[0]})
-        }else{
-          alert("Invalid password")
-        }
-      }
-    })
-  }
   return (
     <div>
-      <h1 className='display-3 text-info text-center'>User Login</h1>
-      <form action="" className='w-50 mx-auto mt-5 bg-light p-4' onSubmit={handleSubmit(onLoginFormSubmit)}>
+      <h1 className='text-info text-center'>User Login</h1>
+      <form action="" className='w-25 mx-auto mt-5 bg-light p-4 shadow-lg'>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">Username</label>
-          <input type="text" name="username" id="username" className='form-control mb-4' {...register("username")}/>
+          <input type="text" name="username" id="username" className='form-control mb-4' />
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">Password</label>
-          <input type="password" name="password" id="password" className='form-control mb-4' {...register("password")}/>
+          <input type="password" name="password" id="password" className='form-control mb-4'/>
         </div>
 
-        <button type='submit' className='btn btn-info text-secondary d-block mx-auto fs-5'>Login</button>
-      </form>
-
-      <p className="lead text-center">
+        <button type='submit' className='btn btn-success text-light d-block mx-auto'>Login</button>
+        <p className="lead text-center">
         New User 
         <Link to="/register" className="fs-4 px-3">
           Register
         </Link>
         here
       </p>
+      </form>
+
+     
     </div>
   )
 }

@@ -9,6 +9,7 @@ import ErrorRoute from './ErrorRoute'
 import Java from './java/Java'
 import NodeJs  from './nodejs.js/NodeJs'
 import Vue from './vue/Vue'
+import UserDashBoard from './user-dashboard/UserDashboard'
 
 function Router() {
   let router = createBrowserRouter([
@@ -28,6 +29,10 @@ function Router() {
         {
           path:"login",
           element:<Login/>
+        },
+        {
+          path:"user-dashboard/:username",
+          element:<UserDashBoard/>
         },
         {
           path:"technologies",
